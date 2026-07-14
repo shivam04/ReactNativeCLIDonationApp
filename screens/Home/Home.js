@@ -1,5 +1,6 @@
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import Badge from '../../components/Badge/Badge';
 import Tab from '../../components/Tab/Tab';
 import globalStyle from '../../assets/styles/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,6 +13,7 @@ const Home = () => {
             <Button title={'Donate'} isDisabled={true} />
             <Tab title={'Highlight'} />
             <Tab title={'Highlight'} isInactive={true} />
+            <Badge title={'Environment'} />
         </SafeAreaView>
     )
 }
