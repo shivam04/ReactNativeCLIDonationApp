@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-const FONT_FAMILY =
+export const FONT_FAMILY =
     Platform.OS === 'ios' ? 'Inter24pt' : 'Inter_24pt';
 
 export const getFontFamily = (weight) => {

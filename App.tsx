@@ -4,26 +4,15 @@
  *
  * @format
  */
-
-import { StyleSheet, Text } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { getFontFamily } from './assets/fonts/helper';
+import MainNavigation from './navigation/MainNavigation';
+import { NavigationContainer } from "@react-navigation/native";
 
 function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text style={styles.title}>Hello World!</Text>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <MainNavigation />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 70,
-    fontFamily: getFontFamily('800'),
-  },
-});
 
 export default App;
