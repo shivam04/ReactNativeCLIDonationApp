@@ -6,12 +6,16 @@
  */
 import MainNavigation from './navigation/MainNavigation';
 import { NavigationContainer } from "@react-navigation/native";
+import { Provider } from "react-redux";
+import store from './redux/store';
 
 function App() {
   return (
-    <NavigationContainer>
-      <MainNavigation />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
