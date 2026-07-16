@@ -6,7 +6,7 @@ import { useRef, useState } from 'react';
 import { scaleFontSize } from '../../assets/styles/scaling';
 import PropTypes from 'prop-types';
 
-const Search = props => {
+const Search = ({ onSearch = () => { }, placeHolder = 'Search' }) => {
 
     const textInputRef = useRef(null);
     const [search, setSearch] = useState('');
@@ -17,7 +17,7 @@ const Search = props => {
 
     const handleSearch = (searchValue) => {
         setSearch(searchValue);
-        props.onSearch(searchValue);
+        onSearch(searchValue);
     }
 
     return (
@@ -28,6 +28,7 @@ const Search = props => {
                 size={scaleFontSize(22)}
             />
             <TextInput
+                placeholder={placeHolder}
                 ref={textInputRef}
                 style={style.searchInput}
                 value={search}
@@ -37,12 +38,9 @@ const Search = props => {
     )
 }
 
-Search.default = {
-    onSearch: () => { }
-}
-
 Search.propTypes = {
-    onSearch: PropTypes.func
+    onSearch: PropTypes.func,
+    placeHolder: PropTypes.string
 }
 
 export default Search;

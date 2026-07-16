@@ -1,0 +1,9 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace DonationApp.xcworkspace -configuration Debug -scheme DonationApp -destination id=2A930DEB-C54D-4DE4-9356-F0D1D0D097D7 build
+
+2026-07-17 00:02:20.243 xcodebuild[89368:621299] Writing error result bundle to /var/folders/wx/lrctgzxs1yqb2rhnzs5r4c900000gr/T/ResultBundle_2026-17-07_00-02-0020.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ id:2A930DEB-C54D-4DE4-9356-F0D1D0D097D7 }
+
+	Ineligible destinations for the "DonationApp" scheme:
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }
