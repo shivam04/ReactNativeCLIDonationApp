@@ -4,7 +4,7 @@ import style from './style';
 import { useRef, useState } from "react";
 import { horizontalScale } from "../../assets/styles/scaling";
 
-const Tab = props => {
+const Tab = ({ tabId, title = '', isInactive = false, onPress = () => { } }) => {
 
     const [width, setWidth] = useState(0);
     const textRef = useRef(null);
@@ -16,29 +16,24 @@ const Tab = props => {
 
     return (
         <Pressable
-            disabled={props.isInactive}
-            style={[style.tab, props.isInactive && style.inactiveTab, tabWidth]}
-            onPress={() => props.onPress()}
+            style={[style.tab, isInactive && style.inactiveTab, tabWidth]}
+            onPress={() => onPress(tabId)}
         >
             <Text
                 onTextLayout={(event) => {
                     setWidth(event.nativeEvent.lines[0].width)
                 }}
                 ref={textRef}
-                style={[style.title, props.isInactive && style.inactiveTitle]}
+                style={[style.title, isInactive && style.inactiveTitle]}
             >
-                {props.title}
+                {title}
             </Text>
         </Pressable>
     );
 }
 
-Tab.default = {
-    isInactive: false,
-    onPress: () => { },
-}
-
 Tab.propTypes = {
+    tabId: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     isInactive: PropTypes.bool,
     onPress: PropTypes.func
