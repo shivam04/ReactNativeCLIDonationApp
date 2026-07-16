@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header';
 import Search from '../../components/Search/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { Image, Pressable, ScrollView, Text, View } from 'react-native';
-import { resetToInitialState } from '../../redux/reducers/User';
 import style from './style';
 
 const Home = () => {
