@@ -9,8 +9,10 @@ import { FlatList, Image, Pressable, ScrollView, Text, View } from 'react-native
 import style from './style';
 import { updateSelectedCategoryId } from '../../redux/reducers/Categories';
 import { useEffect, useState } from 'react';
+import { updateSelectedDonationId } from '../../redux/reducers/Donations';
+import { Route } from '../../navigation/Route';
 
-const Home = () => {
+const Home = ({ navigation }) => {
     const user = useSelector(state => state.user);
     const categories = useSelector(state => state.categories);
     const dispatch = useDispatch();
@@ -128,7 +130,12 @@ const Home = () => {
                                     }
                                     uri={donationItem.image}
                                     onPress={(selectedDonationItemId) => {
-                                        console.log(selectedDonationItemId)
+                                        dispatch(
+                                            updateSelectedDonationId(
+                                                selectedDonationItemId
+                                            )
+                                        );
+                                        navigation.navigate(Route.SingleDonationItem);
                                     }}
                                     price={parseFloat(donationItem.price)}
                                 />
