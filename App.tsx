@@ -4,7 +4,7 @@
  *
  * @format
  */
-import MainNavigation from './navigation/MainNavigation';
+import RootNavigation from './navigation/RootNavigation';
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import store, { persistor } from './redux/store';
@@ -15,7 +15,7 @@ function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
         <NavigationContainer>
-          <MainNavigation />
+          <RootNavigation />
         </NavigationContainer>
       </PersistGate>
     </Provider>

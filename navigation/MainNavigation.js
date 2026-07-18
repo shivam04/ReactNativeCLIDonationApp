@@ -7,7 +7,7 @@ import Registration from "../screens/Registration/Registration";
 
 const Stack = createNativeStackNavigator();
 
-const MainNavigation = () => {
+export const NonAuthenticated = () => {
     return (
         <Stack.Navigator
             initialRouteName={Route.Login}
@@ -15,15 +15,26 @@ const MainNavigation = () => {
                 header: () => null,
                 headerShown: false
             }}>
-            <Stack.Screen name={Route.Home} component={Home} />
-            <Stack.Screen
-                name={Route.SingleDonationItem}
-                component={SingleDonationItem}
-            />
             <Stack.Screen name={Route.Login} component={Login} />
             <Stack.Screen name={Route.Registration} component={Registration} />
         </Stack.Navigator>
     )
 }
 
-export default MainNavigation;
+export const Authenticated = () => {
+    return (
+        <Stack.Navigator
+            initialRouteName={Route.Home}
+            screenOptions={{
+                header: () => null,
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name={Route.Home} component={Home} />
+            <Stack.Screen
+                name={Route.SingleDonationItem}
+                component={SingleDonationItem}
+            />
+        </Stack.Navigator>
+    )
+}

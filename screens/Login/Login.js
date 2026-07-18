@@ -56,7 +56,6 @@ const Login = ({ navigation }) => {
                             } else {
                                 setError('');
                                 dispatch(logIn(user.data))
-                                navigation.navigate(Route.Home);
                             }
                         }}
                     />

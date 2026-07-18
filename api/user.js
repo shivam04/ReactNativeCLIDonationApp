@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, getIdToken } from '@react-native-firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, getIdToken, signOut } from '@react-native-firebase/auth';
 
 export const createUser = async (fullName, email, password) => {
     try {
@@ -43,4 +43,9 @@ export const loginUser = async (email, password) => {
         }
         return { status: false, error: 'Something went wrong' };
     }
+}
+
+export const logOut = async () => {
+    const auth = getAuth();
+    await signOut(auth);
 }
