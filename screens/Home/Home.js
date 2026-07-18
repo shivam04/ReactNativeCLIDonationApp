@@ -115,32 +115,35 @@ const Home = ({ navigation }) => {
                 {
                     donationItems.length > 0 &&
                     <View style={style.donationItemsContainer}>
-                        {donationItems.map(donationItem =>
-                            <View
-                                key={donationItem.donationItemId}
-                                style={style.singleDonationItem}
-                            >
-                                <SingleDonationItem
-                                    donationItemId={donationItem.donationItemId}
-                                    donationTitle={donationItem.name}
-                                    badgeTitle={
-                                        categories.categories.filter(
-                                            val => val.categoryId === categories.selectedCategoryId
-                                        )[0].name
-                                    }
-                                    uri={donationItem.image}
-                                    onPress={(selectedDonationItemId) => {
-                                        dispatch(
-                                            updateSelectedDonationId(
-                                                selectedDonationItemId
-                                            )
-                                        );
-                                        navigation.navigate(Route.SingleDonationItem);
-                                    }}
-                                    price={parseFloat(donationItem.price)}
-                                />
-                            </View>
-                        )}
+                        {donationItems.map(donationItem => {
+                            const categoryInformation = categories.categories.find(
+                                val => val.categoryId === categories.selectedCategoryId,
+                            );
+                            return (
+                                <View
+                                    key={donationItem.donationItemId}
+                                    style={style.singleDonationItem}
+                                >
+                                    <SingleDonationItem
+                                        donationItemId={donationItem.donationItemId}
+                                        donationTitle={donationItem.name}
+                                        badgeTitle={categoryInformation.name}
+                                        uri={donationItem.image}
+                                        onPress={(selectedDonationItemId) => {
+                                            dispatch(
+                                                updateSelectedDonationId(
+                                                    selectedDonationItemId
+                                                )
+                                            );
+                                            navigation.navigate(Route.SingleDonationItem, {
+                                                categoryInformation
+                                            });
+                                        }}
+                                        price={parseFloat(donationItem.price)}
+                                    />
+                                </View>
+                            )
+                        })}
                     </View>
                 }
             </ScrollView>
