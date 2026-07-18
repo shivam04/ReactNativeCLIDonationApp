@@ -4,8 +4,9 @@ const { StyleSheet } = require("react-native");
 
 const style = StyleSheet.create({
     image: {
-        width: horizontalScale(155),
-        height: verticalScale(170)
+        width: horizontalScale(140),
+        height: verticalScale(170),
+        borderRadius: horizontalScale(20)
     },
     badge: {
         position: 'absolute',

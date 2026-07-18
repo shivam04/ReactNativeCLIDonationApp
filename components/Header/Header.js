@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import PropTypes from "prop-types";
 import style from './style';
 
-const Header = ({ title = '', type = 1, color = '#000000' }) => {
+const Header = ({ title = '', type = 1, color = '#000000', numberOfLines = null }) => {
     const styleToApply = () => {
         switch (type) {
             case 1:
@@ -20,6 +20,7 @@ const Header = ({ title = '', type = 1, color = '#000000' }) => {
         <View>
             <Text
                 style={[styleToApply(), color && { color }]}
+                numberOfLines={numberOfLines}
             >
                 {title}
             </Text>
@@ -30,7 +31,8 @@ const Header = ({ title = '', type = 1, color = '#000000' }) => {
 Header.propTypes = {
     title: PropTypes.string,
     type: PropTypes.number,
-    color: PropTypes.string
+    color: PropTypes.string,
+    numberOfLines: PropTypes.numberOfLines
 }
 
 export default Header;
