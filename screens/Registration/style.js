@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { horizontalScale, verticalScale } from '../../assets/styles/scaling';
+import { horizontalScale, scaleFontSize, verticalScale } from '../../assets/styles/scaling';
+import { FONT_FAMILY } from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
     container: {
@@ -11,6 +12,18 @@ const style = StyleSheet.create({
         marginLeft: horizontalScale(14),
         marginTop: verticalScale(7),
     },
+    error: {
+        fontFamily: FONT_FAMILY,
+        fontSize: scaleFontSize(16),
+        color: '#FF0000',
+        marginBottom: verticalScale(24)
+    },
+    success: {
+        fontFamily: FONT_FAMILY,
+        fontSize: scaleFontSize(16),
+        color: '#28a745',
+        marginBottom: verticalScale(24)
+    }
 });
 
 export default style;
