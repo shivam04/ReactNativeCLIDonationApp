@@ -32,5 +32,13 @@ target 'DonationApp' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Fix "include of non-modular header inside framework module" errors
+    # caused by @react-native-firebase/* pods importing React-Core headers
+    # (e.g. RCTConvert.h) while using `use_frameworks! :linkage => :static`.
+    # See https://github.com/invertase/react-native-firebase/issues/6933
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES"] = "YES"
+    end
   end
 end
