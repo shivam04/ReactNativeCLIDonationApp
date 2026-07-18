@@ -7,6 +7,7 @@ import { useState } from "react";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import BackButton from "../../components/BackButton/BackButton";
+import { createUser } from "../../api/user";
 
 const Registration = ({ navigation }) => {
     const [fullName, setFullName] = useState('');
@@ -47,7 +48,10 @@ const Registration = ({ navigation }) => {
                     />
                 </View>
                 <View style={globalStyle.marginBottom24}>
-                    <Button title={'Registration'} />
+                    <Button
+                        title={'Registration'}
+                        onPress={async () => await createUser(fullName, email, password)}
+                    />
                 </View>
             </ScrollView>
         </SafeAreaView>
