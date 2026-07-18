@@ -3,6 +3,7 @@ import { Route } from './Route';
 import Home from "../screens/Home/Home";
 import SingleDonationItem from "../screens/SingleDonationItem/SingleDonationItem";
 import Login from "../screens/Login/Login";
+import Registration from "../screens/Registration/Registration";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const MainNavigation = () => {
                 component={SingleDonationItem}
             />
             <Stack.Screen name={Route.Login} component={Login} />
+            <Stack.Screen name={Route.Registration} component={Registration} />
         </Stack.Navigator>
     )
 }

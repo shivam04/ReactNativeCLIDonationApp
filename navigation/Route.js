@@ -1,5 +1,6 @@
 export const Route = {
     Home: 'Home',
     SingleDonationItem: 'SingleDonationItem',
-    Login: 'Login'
+    Login: 'Login',
+    Registration: 'Registration',
 }
