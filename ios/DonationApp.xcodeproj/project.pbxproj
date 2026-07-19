@@ -68,6 +68,8 @@
 		FB1241428C8141F9B8A29BB7 /* Inter_24pt-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E26D6B75D0741E1A2761672 /* Inter_24pt-LightItalic.ttf */; };
 		FED9BCFC12FB44F09B2A9A69 /* Inter_28pt-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7847FB8CBAE241C8893D017C /* Inter_28pt-MediumItalic.ttf */; };
 		FF7FCE9B98DC42749710E2B4 /* Inter_18pt-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63CDAEEA07C2476E89EE7273 /* Inter_18pt-Medium.ttf */; };
+		9A6320C8236A4D61B6F012C3 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CE7AF4F698B4C43BC2BD48A /* BootSplash.storyboard */; };
+		26C50FD98CE44C44BE200655 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA86283AFB34B9D8740ED8C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EE2B73B5188F47448071BE88 /* Inter_24pt-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter_24pt-BoldItalic.ttf"; path = "../assets/fonts/Inter_24pt-BoldItalic.ttf"; sourceTree = "<group>"; };
 		F8AF0CA65E734B40B5850A53 /* Inter_24pt-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter_24pt-SemiBold.ttf"; path = "../assets/fonts/Inter_24pt-SemiBold.ttf"; sourceTree = "<group>"; };
+		6CE7AF4F698B4C43BC2BD48A /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "DonationApp/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1AA86283AFB34B9D8740ED8C /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "DonationApp/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				6CE7AF4F698B4C43BC2BD48A /* BootSplash.storyboard */,
+				1AA86283AFB34B9D8740ED8C /* Colors.xcassets */,
 			);
 			name = DonationApp;
 			sourceTree = "<group>";
@@ -394,6 +400,8 @@
 				8AD8B5CCC2054BB192B052B0 /* Inter_24pt-Italic.ttf in Resources */,
 				FB1241428C8141F9B8A29BB7 /* Inter_24pt-LightItalic.ttf in Resources */,
 				C2AF553C7A414F41B22A0DBF /* helper.js in Resources */,
+				9A6320C8236A4D61B6F012C3 /* BootSplash.storyboard in Resources */,
+				26C50FD98CE44C44BE200655 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
