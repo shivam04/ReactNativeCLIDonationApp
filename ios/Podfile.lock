@@ -2102,6 +2102,113 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - Stripe (26.3.0):
+    - StripeApplePay (= 26.3.0)
+    - StripeCore (= 26.3.0)
+    - StripeIssuing (= 26.3.0)
+    - StripePayments (= 26.3.0)
+    - StripePaymentsUI (= 26.3.0)
+    - StripeUICore (= 26.3.0)
+  - stripe-react-native (0.70.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - stripe-react-native/Core (= 0.70.0)
+    - stripe-react-native/NewArch (= 0.70.0)
+    - Yoga
+  - stripe-react-native/Core (0.70.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Stripe (= 26.3.0)
+    - StripeApplePay (= 26.3.0)
+    - StripeFinancialConnections (= 26.3.0)
+    - StripePayments (= 26.3.0)
+    - StripePaymentSheet (= 26.3.0)
+    - StripePaymentsUI (= 26.3.0)
+    - Yoga
+  - stripe-react-native/NewArch (0.70.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
+  - StripeApplePay (26.3.0):
+    - StripeCore (= 26.3.0)
+  - StripeCore (26.3.0)
+  - StripeFinancialConnections (26.3.0):
+    - StripeCore (= 26.3.0)
+    - StripeUICore (= 26.3.0)
+  - StripeIssuing (26.3.0):
+    - StripeCore (= 26.3.0)
+    - StripePayments (= 26.3.0)
+    - StripePaymentsUI (= 26.3.0)
+  - StripePayments (26.3.0):
+    - StripeCore (= 26.3.0)
+    - StripePayments/Stripe3DS2 (= 26.3.0)
+  - StripePayments/Stripe3DS2 (26.3.0):
+    - StripeCore (= 26.3.0)
+  - StripePaymentSheet (26.3.0):
+    - StripeApplePay (= 26.3.0)
+    - StripeCore (= 26.3.0)
+    - StripePayments (= 26.3.0)
+    - StripePaymentsUI (= 26.3.0)
+  - StripePaymentsUI (26.3.0):
+    - StripeCore (= 26.3.0)
+    - StripePayments (= 26.3.0)
+    - StripeUICore (= 26.3.0)
+  - StripeUICore (26.3.0):
+    - StripeCore (= 26.3.0)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -2187,6 +2294,7 @@ DEPENDENCIES:
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -2201,6 +2309,15 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - RecaptchaInterop
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeFinancialConnections
+    - StripeIssuing
+    - StripePayments
+    - StripePaymentSheet
+    - StripePaymentsUI
+    - StripeUICore
 
 EXTERNAL SOURCES:
   AsyncStorage:
@@ -2366,6 +2483,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  stripe-react-native:
+    :path: "../node_modules/@stripe/stripe-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2461,8 +2580,18 @@ SPEC CHECKSUMS:
   RNFBAuth: 2c861e68aef8b9d6d2ddfbdf41d1dbcf2544ea8b
   RNScreens: 383b47cd73f32bbb5ef6c4381bf82a8ed3f4889c
   RNSVG: 394cfd0518613b144c65ffe69045f827b78a7a7c
+  Stripe: f7091df3d8d2d3914155b46e0aa3bbb1ed1775e5
+  stripe-react-native: 486c633096ec24648eee078e9d93b195e8f0bb9f
+  StripeApplePay: e6feafcfde92bede41fca36a3638910dc05c6d7d
+  StripeCore: 38ffa3e203ed1090f577cd068322c5d23261bec4
+  StripeFinancialConnections: adb8a411899b89c943cfc138566fc68305f863f3
+  StripeIssuing: 1d120024eafa3d4372766cc44db571597d6507af
+  StripePayments: dc15899a649453ab6d377e5fc9369799ba3d3606
+  StripePaymentSheet: 3a8dd413cef611d1e025c772a1dba6535a076d9c
+  StripePaymentsUI: 967de780d7683b51323934d3c1e3406cb65038f1
+  StripeUICore: ed84f5c88d867aaf6da98f49641a4da27dddaab8
   Yoga: c30c859b7e9b75e547b600b486fe33165f60de00
 
 PODFILE CHECKSUM: deb5b863817df3d50b0a7da89721922741e915d4
 
-COCOAPODS: 1.17.0
+COCOAPODS: 1.15.2

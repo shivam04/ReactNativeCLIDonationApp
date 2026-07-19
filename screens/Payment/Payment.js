@@ -1,22 +1,81 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import style from './style';
-import { ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
 import globalStyle from '../../assets/styles/globalStyle';
 import Header from '../../components/Header/Header';
 import { useSelector } from 'react-redux';
 import Button from '../../components/Button/Button';
+import { CardForm, StripeProvider, useConfirmPayment } from "@stripe/stripe-react-native"
+import { STRIPE_PUBLISHABLE_KEY } from "../../Constants/Constants";
+import { useState } from 'react';
 
-const Payment = () => {
-    const donationItemInformation = useSelector(state => state.donations.selectedDonationInformation);
+const Payment = ({ navigation }) => {
+    const donationItemInformation = useSelector(
+        state => state.donations.selectedDonationInformation
+    );
+
+    const [isReady, setIsReady] = useState(false);
+    const { confirmPayment, loading } = useConfirmPayment();
+    const user = useSelector(state => state.user);
+
+    const fetchPaymentIntentClientSecret = async () => {
+        const response = await fetch(
+            'https://stripe-server-alpha.vercel.app/create-payment-intent',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: user.email,
+                    currency: 'usd',
+                    amount: donationItemInformation.price * 100,
+                }),
+            },
+        );
+        const { clientSecret } = await response.json();
+        return clientSecret;
+    }
+
+    const handlePayment = async () => {
+        const clientSecret = await fetchPaymentIntentClientSecret();
+        const { error, paymentIntent } = await confirmPayment(clientSecret, {
+            paymentMethodType: 'Card',
+        });
+
+        if (error) {
+            Alert.alert(
+                'Error has occured with your payment',
+                error.localizedMessage,
+            );
+        } else if (paymentIntent) {
+            Alert.alert('Successful', 'The payment was confirmed successfully!');
+            navigation.goBack();
+        }
+    }
+
     return (
         <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
             <ScrollView style={style.paymentContainer}>
                 <Header title={'Making Donations'} />
                 <Text style={style.donationAmountDescription}>You are about to donate {donationItemInformation.price}</Text>
-                <View />
+                <View>
+                    <StripeProvider publishableKey={STRIPE_PUBLISHABLE_KEY}>
+                        <CardForm
+                            style={style.cardForm}
+                            onFormComplete={() => {
+                                setIsReady(true);
+                            }}
+                        />
+                    </StripeProvider>
+                </View>
             </ScrollView>
             <View style={style.button} >
-                <Button title={"Donate"} />
+                <Button
+                    title={"Donate"}
+                    isDisabled={!isReady || loading}
+                    onPress={async () => await handlePayment()}
+                />
             </View>
         </SafeAreaView>
     )
